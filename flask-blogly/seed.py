@@ -1,4 +1,4 @@
-from models import User, Post, db
+from models import User, Post, Tag, PostTag, db
 from app import app
 
 db.drop_all()
@@ -23,6 +23,13 @@ post6 = Post(title="Hello", content="Time to die",user_id=3)
 post7 = Post(title="Knife cuts", content="Slice N Dice",user_id=3)
 post8 = Post(title="DayMares", content="Rainbows",user_id=3)
 
+
+tag1 = Tag(name = "nightmares")
+ptag1 = PostTag(post_id=1, tag_id=1)
+
+
+
+
 db.session.add(user1)
 db.session.add(user2)
 db.session.add(user3)
@@ -41,3 +48,9 @@ db.session.add(post6)
 db.session.add(post7)
 db.session.add(post8)
 db.session.commit()
+
+db.session.add(tag1)
+db.session.commit()
+db.session.add(ptag1)
+db.session.commit()
+
