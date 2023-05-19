@@ -65,10 +65,11 @@ class Tag(db.Model):
 
     posts = db.relationship(
         'Post',
-        secondary="posts_tags",
-         cascade="all,delete",
+        secondary="post_tags",
+        # cascade="all,delete",
         backref="tags",
     )
+
 
 
 def connect_db(app):
